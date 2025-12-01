@@ -1,0 +1,1091 @@
+/* Reset và font chung */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Reset cho các phần tử form và button */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+    outline: none;
+}
+
+/* Reset thẻ i cho icon */
+i {
+    display: inline-block;
+    background: transparent !important;
+}
+
+body {
+    color: #fff;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.main-header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.5s ease;
+}
+.main-header.scrolled {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 15px 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    transition: transform 0.5s ease;
+}
+.logo:hover img {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+    position: relative;
+    display: inline-block;
+}
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #f6d365;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f6d365;
+}
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Search icon */
+.search-icon {
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    line-height: 1;
+}
+
+/* User section */
+.user-section-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 15px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.welcome-msg {
+    color: #ddd;
+    font-size: 0.9rem;
+}
+
+.username {
+    font-weight: 600;
+    color: #f6d365;
+}
+
+.logout-form {
+    margin: 0;
+    display: inline;
+}
+
+.logout-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    padding: 0;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+}
+
+.logout-btn:hover {
+    color: #f6d365;
+    transform: scale(1.1);
+}
+
+.search-icon {
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background: none; /* Thêm dòng này */
+    border: none; /* Thêm dòng này */
+    padding: 0; /* Thêm dòng này */
+}
+
+/* Login button */
+.login-btn {
+    padding: 8px 20px;
+    background-color: #f6d365;
+    color: #333;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #f5d261;
+    color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .main-nav {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .user-section-wrapper {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+        padding: 10px 0;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('/default/images/Background.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px; /* Tránh bị header che */
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-transform: uppercase;
+    animation: fadeInUp 1s ease-out both;
+}
+
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #ffffff;
+    line-height: 1.8;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+
+/* Button Style */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #f5d261  ;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background-color: #f6d365;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 20px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero .btn {
+    animation: fadeIn 2s ease-in-out;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Popular Menu Section */
+.popular-menu {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.popular-menu-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/default/images/Background2.png') no-repeat center center/cover;
+    z-index: -1;
+   /* Giữ độ trong suốt nhẹ */
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.section-header p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px; /* Tăng khoảng cách giữa các item */
+    padding: 0 20px;
+}
+
+.menu-card {
+    background: transparent; /* Nền trong suốt */
+    border-radius: 0; /* Bỏ bo góc */
+    overflow: hidden;
+    box-shadow: none; /* Bỏ bóng đổ */
+    transition: transform 0.3s ease;
+    border: none; /* Đảm bảo không có viền */
+    opacity: 0;
+    transform: translateY(50px);
+    animation: cardEntrance 0.6s ease-out forwards;
+}
+@keyframes cardEntrance {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-card:hover {
+    transform: translateY(-5px); /* Giữ hiệu ứng nổi nhẹ */
+    box-shadow: none; /* Vẫn không có bóng khi hover */
+}
+
+.menu-image {
+    height: 230px; /* Tăng chiều cao ảnh */
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+    border-radius: 0; /* Bỏ bo góc ảnh nếu cần */
+}
+
+.menu-content {
+    padding: 0; /* Bỏ padding */
+    text-align: center;
+}
+
+.menu-content h3 {
+    font-size: 1.8rem; /* Tăng cỡ chữ */
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.menu-content p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+.menu-card:nth-child(1) { animation-delay: 0.1s; }
+.menu-card:nth-child(2) { animation-delay: 0.2s; }
+.menu-card:nth-child(3) { animation-delay: 0.3s; }
+.menu-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 50px; /* Tăng khoảng cách trên mobile */
+    }
+
+    .menu-card {
+        max-width: 100%;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .menu-image {
+        height: 200px;
+    }
+}
+
+/* Chicken Wings Section với background và hình ảnh */
+.chicken-wings {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.wings-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/default/images/Background4.png') repeat;
+
+    background-color: #333333;
+
+
+    z-index: -1;
+}
+
+.wings-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    position: relative;
+
+    border-radius: 0;
+
+    overflow: hidden;
+}
+
+.wings-image {
+    flex: 1;
+    min-height: 500px;
+    background: url('/default/images/suon.png') no-repeat center center/contain;
+    background-size: contain;
+    background-position: left center;
+    transform: translateX(-50px);
+    transition: all 1s ease;
+}
+
+.wings-content {
+    flex: 1;
+    padding: 60px;
+    text-align: left;
+    transform: translateX(50px);
+    transition: all 1s ease;
+}
+
+.wings-content h3 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.wings-content p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.wings-btn {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: #f6d365;
+    color: black;
+    text-decoration: none;
+     border-radius: 6px; /*bo goc */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+
+}
+
+.wings-btn:hover {
+    background-color: transparent;
+    color: #ff6b6b;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .wings-container {
+        flex-direction: column;
+    }
+
+    .wings-image {
+        width: 100%;
+        min-height: 300px;
+        background-position: center;
+    }
+
+    .wings-content {
+        padding: 40px 30px;
+        text-align: center;
+    }
+}
+/* Statistics Section - 1440x780 Version */
+.statistics-section {
+    position: relative;
+    width: 1600px;
+    height: 780px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    background: url('/default/images/Group.png') center/cover no-repeat;
+    overflow: hidden;
+    color: #000;
+}
+
+.statistics-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+}
+
+.statistics-section .container {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-header {
+    margin-bottom: 80px;
+}
+
+.section-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 120px; /* Increased gap */
+    margin-top: 0;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    flex: 1;
+    min-width: 280px;
+    max-width: 320px;
+}
+
+.stat-square {
+    border: 8px solid #333333; /* Thick 8px border */
+    border-radius: 0px;
+    padding: 50px 40px;
+    height: 220px;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+
+}
+
+.stat-square:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    border-color: #333333; /* Color change on hover */
+}
+
+.stat-number {
+    font-size: 64px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.stat-label {
+    font-size: 24px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1480px) {
+    .statistics-section {
+        width: 100%;
+        height: auto;
+        padding: 100px 0;
+    }
+
+    .stats-grid {
+        gap: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .stat-square {
+        height: 180px;
+        width: 180px;
+        padding: 30px 20px;
+    }
+
+    .stat-number {
+        font-size: 54px;
+    }
+
+    .stat-label {
+        font-size: 20px;
+    }
+}
+/* Chicken Satay Section - Hình bên phải */
+.satay-section {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+     /* Thêm màu nền dự phòng */
+}
+
+.satay-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/default/images/bgr3.png') repeat;
+    background-color: #333333;
+    z-index: -1;
+}
+
+.satay-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    flex-direction: row-reverse; /* Quan trọng: Đảo ngược thứ tự */
+}
+
+.satay-image {
+    flex: 1;
+    min-height: 500px;
+    background-size: cover;
+    background-position: center; /* Giữ hình căn giữa */
+    transform: translateX(-50px);
+    transition: all 1s ease;
+}
+
+.satay-content {
+    flex: 1;
+    padding: 0 60px;
+    text-align: left; /* Căn trái nội dung */
+    transform: translateX(50px);
+    transition: all 1s ease;
+}
+
+/* Phần còn lại giữ nguyên */
+.satay-content h2 {
+    font-size: 2.8rem;
+    color: #fafafa;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.satay-content p {
+    color: #f5f1f1;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.satay-btn {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: #f6d365;
+    color: white;
+    text-decoration: none;
+    border-radius: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.satay-btn:hover {
+    background-color: #e07b2c;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .satay-container {
+        flex-direction: column; /* Trên mobile vẫn 1 cột */
+    }
+
+    .satay-image {
+        width: 100%;
+        min-height: 300px;
+        order: 1; /* Đảm bảo hình ở trên */
+    }
+
+    .satay-content {
+        order: 2; /* Nội dung ở dưới */
+        padding: 40px 20px;
+        text-align: center;
+    }
+}
+
+/* About Section */
+.about-section {
+    padding: 80px 20px;
+    text-align: center;
+    background-image: url('/default/images/bgkabout.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+}
+
+/* Lớp phủ tối để chữ dễ đọc */
+.about-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1; /* Đặt nội dung lên trên lớp phủ */
+}
+
+.avatar-container {
+    margin: 0 auto 30px;
+    width: 248px;
+    height: 257px;
+    overflow: hidden;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    color: rgb(0, 0, 0);
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: rgb(0, 0, 0);
+}
+
+.signature {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #111111;
+}
+
+/* Newsletter - Balanced Version */
+.newsletter {
+    padding: 120px 2%;
+    text-align: center;
+    max-width: 1600px;
+    height: 780px;
+    margin: 0 auto;
+    color: white;
+    position: relative;
+    background-image: url('/default/images/Background2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.newsletter-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.9) 0%, rgba(255, 159, 152, 0.9) 100%);
+    z-index: 0;
+}
+
+.newsletter-content {
+    width: 100%;
+    max-width: 800px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.newsletter h2 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+.newsletter p {
+    margin-bottom: 40px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter form {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.newsletter form:hover {
+    transform: scale(1.02);
+}
+
+.newsletter input {
+    flex: 1;
+    padding: 18px 25px;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    font-size: 1.1rem;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.newsletter input:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.newsletter button {
+    padding: 18px 35px;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    background-color: #000000;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.newsletter button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .newsletter {
+        height: auto;
+        padding: 80px 20px;
+    }
+
+    .newsletter h2 {
+        font-size: 2rem;
+    }
+
+    .newsletter form {
+        flex-direction: column;
+    }
+
+    .newsletter input,
+    .newsletter button {
+        width: 100%;
+        border-radius: 8px;
+        margin: 5px 0;
+    }
+
+    .newsletter input {
+        border-radius: 8px 8px 0 0;
+    }
+
+    .newsletter button {
+        border-radius: 0 0 8px 8px;
+    }
+}
+
+/* Button Style */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #ff5252;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 80px 5% 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.footer-section p, .footer-section ul {
+    color: #ddd;
+    line-height: 1.8;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ff6b6b;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 15px;
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff6b6b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 5px 15px;
+    }
+
+    .hero {
+        text-align: center;
+        margin-top: 120px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .wings-content {
+        flex-direction: column;
+    }
+
+    .wings-image {
+        width: 100%;
+        height: 300px;
+    }
+
+    .wings-text {
+        padding: 30px;
+    }
+
+    .newsletter form {
+        flex-direction: column;
+    }
+
+    .newsletter input,
+    .newsletter button {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .newsletter button {
+        margin-top: 10px;
+    }
+}

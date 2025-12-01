@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/default/css/style.css}">
+    <style>
+        /* Các animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        @keyframes slideInLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+<!-- Include header -->
+<header th:replace="~{default/header :: header}"></header>
+
+<!-- Main content -->
+<main>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">DISCOUNT 50%</h1>
+                <p class="hero-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <a href="#" class="btn pulse-animation">ORDER NOW</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Menu Section -->
+    <section id="product" class="popular-menu">
+        <div class="popular-menu-bg"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">POPULAR MENU</h2>
+                <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+            </div>
+
+            <div class="menu-grid">
+                <div class="menu-card" data-delay="0.1s">
+                    <div class="menu-image float-animation" th:style="'background-image: url(/default/images/kage1.png)'"></div>
+                    <div class="menu-content">
+                        <h3>PACKAGE I</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-delay="0.2s">
+                    <div class="menu-image float-animation" th:style="'background-image: url(/default/images/kage2.png)'"></div>
+                    <div class="menu-content">
+                        <h3>PACKAGE II</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-delay="0.3s">
+                    <div class="menu-image float-animation" th:style="'background-image: url(/default/images/kage3.png)'"></div>
+                    <div class="menu-content">
+                        <h3>PACKAGE III</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chicken Wings Section -->
+    <section class="chicken-wings">
+        <div class="wings-bg"></div>
+        <div class="wings-container">
+            <div class="wings-image slide-in-left"></div>
+            <div class="wings-content slide-in-right">
+                <h3>CHICKEN WINGS</h3>
+                <p>Lorem ipsum dolor sit amet, consecte-<br>tur adipiscing elit. Vivamus lacinia<br>odio vitae vestibulum vestibulum.</p>
+                <a href="#" class="wings-btn">ORDER NOW</a>
+            </div>
+        </div>
+    </section>
+    <!-- Statistics Section - 1440x780 Version -->
+    <section class="statistics-section" >
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">OUR STATISTICS</h2>
+                <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <div class="stat-square">
+                        <div class="stat-number">2k+</div>
+                        <div class="stat-label">CUSTOMER</div>
+                    </div>
+                </div>
+
+                <div class="stat-item fade-in" style="animation-delay: 0.1s;">
+                    <div class="stat-square">
+                        <div class="stat-number">500</div>
+                        <div class="stat-label">STORE</div>
+                    </div>
+                </div>
+
+                <div class="stat-item fade-in" style="animation-delay: 0.2s;">
+                    <div class="stat-square">
+                        <div class="stat-number">50</div>
+                        <div class="stat-label">CHEF</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chicken Satay Section -->
+    <section id="promo" class="satay-section">
+        <div class="satay-bg"></div>
+        <div class="satay-container">
+            <div class="satay-image slide-in-right" th:style="'background-image: url(/default/images/nuong.png)'"></div>
+            <div class="satay-content slide-in-left">
+                <h2>CHICKEN SATAY</h2>
+                <p>Lorem ipsum dolor sit amet, consecte-<br>tur adipiscing elit. Vivamus lacinia<br>odio vitae vestibulum vestibulum.</p>
+                <a href="#" class="satay-btn">ORDER NOW</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <div class="avatar-container pulse-animation">
+                <img th:src="@{/default/images/avt.png}" alt="Luella Harris" class="avatar">
+            </div>
+
+            <p class="fade-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+            <div class="signature fade-in" style="animation-delay: 0.3s;">Luella Harris</div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <h2 class="fade-in">DON'T MISS OUR UPDATE</h2>
+            <p class="fade-in" style="animation-delay: 0.2s;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+            <form class="fade-in" style="animation-delay: 0.4s;">
+                <input type="email" placeholder="Your Email">
+                <button type="submit" class="btn pulse-animation">SUBSCRIBE</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<!-- Include footer -->
+<footer th:replace="~{default/footer :: footer}"></footer>
+
+<script th:src="@{/default/js/main.js}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Header scroll effect
+        const header = document.querySelector('.main-header');
+        if (header) {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // Float animation cho các món ăn
+        const menuImages = document.querySelectorAll('.menu-image');
+        menuImages.forEach(img => {
+            img.style.animationDelay = img.parentElement.getAttribute('data-delay');
+        });
+
+        // Intersection Observer cho các animation
+        const animateElements = document.querySelectorAll('.slide-in-left, .slide-in-right, .fade-in');
+        if (animateElements.length > 0) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, { threshold: 0.1 });
+            animateElements.forEach(el => observer.observe(el));
+        }
+
+        // Animation cho logo
+        const logo = document.querySelector('.logo-img');
+        if (logo) {
+            logo.addEventListener('mouseover', () => {
+                logo.style.animation = 'pulse 0.5s ease';
+            });
+            logo.addEventListener('animationend', () => {
+                logo.style.animation = '';
+            });
+        }
+    });
+</script>
+</body>
+</html>

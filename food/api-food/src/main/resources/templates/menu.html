@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực đơn Gà - Chicken Restaurant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/default/css/menu.css}">
+    <link rel="stylesheet" th:href="@{/default/css/style.css}">
+    <header th:replace="~{default/header :: header}"></header>
+</head>
+<body>
+
+<header th:replace="~{default/header :: header}"></header>
+
+<main>
+    <!-- Banner đầu trang -->
+    <section class="menu-hero">
+        <div class="container">
+            <h1>THỰC ĐƠN GÀ</h1>
+            <p class="subtitle">Hương vị đặc biệt - Chất lượng tuyệt hảo</p>
+            <div class="hero-overlay"></div>
+        </div>
+    </section>
+
+    <!-- Phần lọc danh mục -->
+    <section class="container">
+        <div class="category-filter">
+            <button class="category-btn active" data-category="ALL">
+                <i class="fas fa-utensils"></i> Tất cả
+            </button>
+            <button class="category-btn" data-category="GAHAP">
+                <i class="fas fa-drumstick-bite"></i> Gà hấp
+            </button>
+            <button class="category-btn" data-category="GANUONG">
+                <i class="fas fa-fire"></i> Gà nướng
+            </button>
+            <button class="category-btn" data-category="COMBO">
+                <i class="fas fa-box-open"></i> Combo
+            </button>
+            <button class="category-btn" data-category="KHAC">
+                <i class="fas fa-fire"></i> Khác
+            </button>
+        </div>
+
+        <!-- Danh sách sản phẩm -->
+        <div class="menu-grid" th:if="${products != null and not #lists.isEmpty(products)}">
+            <div th:each="product : ${products}" class="menu-card" th:data-category="${product.category}">
+                <div class="menu-img-container">
+                    <img th:src="@{'/default/images/' + ${product.image}}" alt="Món gà" class="menu-img">
+                    <span class="menu-badge" th:text="${product.category.displayName}"></span>
+                </div>
+                <div class="menu-content">
+                    <h3 class="menu-title" th:text="${product.name}"></h3>
+                    <p class="menu-desc" th:text="${product.description}"></p>
+                    <div class="price-section">
+                        <span class="menu-price" th:text="${'₫' + #numbers.formatDecimal(product.price, 0, 2, 'COMMA')}"></span>
+                        <button class="add-to-cart">
+                            <i class="fas fa-cart-plus"></i> Thêm vào giỏ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="empty-state" th:if="${products == null or #lists.isEmpty(products)}">
+            <i class="fas fa-utensils"></i>
+            <p>Hiện chưa có sản phẩm nào</p>
+        </div>
+    </section>
+</main>
+
+<th:block th:replace="~{default/footer :: footer}"></th:block>
+
+<script>
+    // Lọc sản phẩm theo danh mục
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const category = this.dataset.category;
+
+            // Cập nhật active button
+            document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            // Lọc sản phẩm
+            document.querySelectorAll('.menu-card').forEach(card => {
+                if (category === 'ALL' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

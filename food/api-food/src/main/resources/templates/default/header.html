@@ -1,0 +1,52 @@
+<header class="main-header" xmlns:th="http://www.thymeleaf.org}" th:fragment="header">
+    <div class="container">
+        <div class="logo">
+            <a th:href="@{/}"><img th:src="@{/default/images/logo.png}" alt="Restaurant Logo" class="logo-img"></a>
+        </div>
+        <nav>
+            <ul class="nav-list">
+                <li><a th:href="@{/}">Home</a></li>
+                <li><a th:href="@{/menu}">Menu</a></li>
+                <li><a th:href="@{/promotions}">Promotions</a></li>
+                <li><a th:href="@{/about}">About</a></li>
+                <li><a th:href="@{/contact}">Contact</a></li>
+
+                <li th:if="${#authorization.expression('hasAnyRole(''ADMIN'',''MANAGER'')')}">
+                    <a th:href="@{/admin}" class="admin-link">
+                        <i class="fas fa-cog"></i> Admin
+                    </a>
+                </li>
+                <li th:if="${#authorization.expression('hasAnyRole(''ADMIN'',''MANAGER'')')}">
+                    <a th:href="@{/system}" class="manager-link">
+                        <i class="fas fa-tools"></i> System
+                    </a>
+                </li>
+
+                <li class="user-section">
+                    <div th:if="${#authentication.principal == null}">
+                        <a th:href="@{/login}" class="login-btn">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </a>
+                    </div>
+                    <div th:if="${#authentication.principal != null}" class="logged-in-user">
+                        <div class="user-greeting">
+                            <span class="welcome">Welcome, </span>
+                            <span class="username" th:text="${#authentication.principal.username}"></span>
+                        </div>
+                        <form th:action="@{/logout}" method="post" class="logout-form">
+                            <button type="submit" class="logout-btn" title="Logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </button>
+                        </form>
+                    </div>
+                </li>
+
+                <li class="search-icon">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
